@@ -17,11 +17,17 @@ global.rm2 = 2;//living room
 
 if file_exists("project.ini")
 {
+	instance_create_depth(6, 47, 100, obj_buttons_continue);
+	
 	ini_open("project.ini");
 	global.start_room = ini_read_string("Save1", "room", rm_bedroom);
 	global.start_x = ini_read_real("Save1", "x", 160);
 	global.start_y = ini_read_real("Save1", "y", 140);
 	ini_close();
+}
+else
+{
+	instance_create_depth(6, 54, 100, obj_buttons);
 }
 
 if global.start_room = 0
