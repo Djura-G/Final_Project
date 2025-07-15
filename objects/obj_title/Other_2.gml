@@ -36,5 +36,5 @@ if global.start_room = 1
 
 if global.start_room = 2
 {
-	global.start_room = rm_living_room;
+	global.start_room = rm_living_room_pica;
 }
