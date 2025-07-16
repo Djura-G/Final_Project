@@ -102,4 +102,15 @@ function scr_walk()
 	{
 		facing_direction = 3;
 	}
+	
+	if keyboard_check_pressed(ord("C"))
+	{
+		audio_play_sound(snd_confirm, 0, false);
+		state = scr_pause;
+	}
+}
+
+function scr_pause()
+{
+	instance_create_layer(258, 47, "Pause", obj_pause);
 }

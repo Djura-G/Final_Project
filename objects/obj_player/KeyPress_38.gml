@@ -1,2 +1,5 @@
-sprite_index = spr_player_walk_up;
-image_index = 1;
+if state = scr_walk
+{
+	sprite_index = spr_player_walk_up;
+	image_index = 1;
+}
