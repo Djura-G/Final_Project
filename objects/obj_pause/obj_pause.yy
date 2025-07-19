@@ -10,8 +10,8 @@
   "name":"obj_pause",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects functions",
-    "path":"folders/Objects/objects functions.yy",
+    "name":"objects menu",
+    "path":"folders/Objects/objects menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
