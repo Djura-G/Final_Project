@@ -1,19 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_archer",
+  "%Name":"obj_party_test",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_archer",
+  "name":"obj_party_test",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects characters",
-    "path":"folders/Objects/objects characters.yy",
+    "name":"objects functions",
+    "path":"folders/Objects/objects functions.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -31,12 +30,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_archer_walk_down",
-    "path":"sprites/spr_archer_walk_down/spr_archer_walk_down.yy",
+    "name":"spr_party_test",
+    "path":"sprites/spr_party_test/spr_party_test.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_archer_walk_down",
-    "path":"sprites/spr_archer_walk_down/spr_archer_walk_down.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

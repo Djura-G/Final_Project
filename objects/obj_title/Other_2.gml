@@ -32,8 +32,9 @@ if file_exists("project.ini")
 	global.start_y = ini_read_real("save1", "y", 140);
 	global.party_member_1 = ini_read_real("save1", "party1", global.p0);
 	global.party_member_2 = ini_read_real("save1", "party2", global.p1);
-	global.party_member_1_follow_distance = ini_read_real("save1", "party1 distance", 40);
-	global.party_member_2_follow_distance = ini_read_real("save1", "party2 distance", 80);
+	global.party_member_1_follow_distance = ini_read_real("save1", "party1_distance", 40);
+	global.party_member_2_follow_distance = ini_read_real("save1", "party2_distance", 80);
+	global.party_exists = ini_read_string("save1", "party_exists", "false");
 	ini_close();
 }
 else
@@ -42,38 +43,41 @@ else
 }
 
 //room verification
-if global.start_room == 0
+if global.start_room = 0
 {
 	global.start_room = rm_main_menu;
 }
 
-if global.start_room == 1
+if global.start_room = 1
 {
 	global.start_room = rm_bedroom;
 }
 
-if global.start_room == 2
+if global.start_room = 2
 {
 	global.start_room = rm_living_room;
 }
 
 //party members verification
-if global.party_member_1 == 0
+if global.party_exists = true
 {
-	global.party_member_1 = obj_archer;
-}
+	if global.party_member_1 = 0
+	{
+		global.party_member_1 = obj_archer;
+	}
 
-if global.party_member_1 == 1
-{
-	global.party_member_1 = obj_guardian;
-}
+	if global.party_member_1 = 1
+	{
+		global.party_member_1 = obj_guardian;
+	}
 
-if global.party_member_2 == 0
-{
-	global.party_member_2 = obj_archer;
-}
+	if global.party_member_2 = 0
+	{
+		global.party_member_2 = obj_archer;
+	}
 
-if global.party_member_2 == 1
-{
-	global.party_member_2 = obj_guardian;
+	if global.party_member_2 = 1
+	{
+		global.party_member_2 = obj_guardian;
+	}
 }
