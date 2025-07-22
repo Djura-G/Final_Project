@@ -26,7 +26,7 @@
   ],
   "name":"spr_guardian_walk_right",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"guardian",
     "path":"folders/Sprites/sprites_characters/guardian.yy",
@@ -90,7 +90,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":11,
-    "yorigin":22,
+    "yorigin":43,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

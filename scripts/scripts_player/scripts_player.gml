@@ -138,7 +138,7 @@ function scr_walk()
 				player_x[follow_pos] = player_x[follow_pos - 1];
 				player_y[follow_pos] = player_y[follow_pos - 1];
 				
-				past_facing[follow_pos] = past_facing[follow_pos - 1]
+				past_facing[follow_pos] = past_facing[follow_pos - 1];	
 			}
 			
 			player_x[0] = x;
