@@ -128,7 +128,7 @@ if inparty = true and obj_player.follow_points > 0
 	
 	if x != xprevious or y != yprevious
 	{
-		image_speed = 1
+		image_speed = 1;
 	}
 	else
 	{

@@ -8,12 +8,12 @@ function scr_party(party_member_1, party_member_2, disband)
 		
 		if !instance_exists(party_member_1)
 		{
-			instance_create_layer(x, y, "player", party_member_1)
+			instance_create_layer(obj_player.x, obj_player.y, "player", party_member_1)
 		}
 		
 		if !instance_exists(party_member_2)
 		{
-			instance_create_layer(x, y, "player", party_member_2)
+			instance_create_layer(obj_player.x, obj_player.y, "player", party_member_2)
 		}
 		
 		global.party_member_1 = party_member_1;
