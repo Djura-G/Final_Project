@@ -1,5 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
+
 draw_self();
 
-draw_text(x, y - 0, distance_to_object(obj_guardian));
+/*
+draw_text(x, y + 40, global.party_member_1);
+draw_text(x, y + 80, global.party_member_2)

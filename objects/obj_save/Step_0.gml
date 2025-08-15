@@ -14,22 +14,22 @@ if place_meeting(x, y, obj_player)
 		
 		if global.party_member_1 = obj_archer
 		{
-			ini_write_real("save1", "party1", global.p0)
+			ini_write_real("save1", "party1", global.p0);
 		}
 		
 		if global.party_member_1 = obj_guardian
 		{
-			ini_write_real("save1", "party1", global.p1)
+			ini_write_real("save1", "party1", global.p1);
 		}
 		
 		if global.party_member_2 = obj_archer
 		{
-			ini_write_real("save1", "party2", global.p0)
+			ini_write_real("save1", "party2", global.p0);
 		}
 		
 		if global.party_member_2 = obj_guardian
 		{
-			ini_write_real("save1", "party2", global.p1)
+			ini_write_real("save1", "party2", global.p1);
 		}
 	}
 	

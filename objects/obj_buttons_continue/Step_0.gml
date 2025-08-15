@@ -15,7 +15,7 @@ if image_index = 5 and keyboard_check_pressed(ord("Z"))
 	file_delete("project.ini");
 	game_restart();
 }
-else if image_index = 5 and keyboard_check_pressed(ord("X"))
+if image_index = 5 and keyboard_check_pressed(ord("X"))
 {
 	audio_play_sound(snd_cancel, 0, false);
 	image_index = 1;

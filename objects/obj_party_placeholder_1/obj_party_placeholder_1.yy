@@ -1,18 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_party_test",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_party_placeholder_1",
+  "eventList":[],
   "managed":true,
-  "name":"obj_party_test",
+  "name":"obj_party_placeholder_1",
   "overriddenProperties":[],
   "parent":{
     "name":"objects functions",
     "path":"folders/Objects/objects functions.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -30,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_party_test",
-    "path":"sprites/spr_party_test/spr_party_test.yy",
+    "name":"spr_box",
+    "path":"sprites/spr_box/spr_box.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

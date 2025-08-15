@@ -1,7 +1,5 @@
 /// @description Variables
 
-state = scr_walk;
-
 hsp = 0;
 vsp = 0;
 

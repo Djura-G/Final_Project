@@ -6,6 +6,9 @@ function scr_party(party_member_1, party_member_2, disband)
 	{	
 		global.party_exists = true;
 		
+		global.party_member_1 = party_member_1;
+		global.party_member_2 = party_member_2;
+		
 		if !instance_exists(party_member_1)
 		{
 			instance_create_layer(obj_player.x, obj_player.y, "player", party_member_1)
@@ -16,8 +19,8 @@ function scr_party(party_member_1, party_member_2, disband)
 			instance_create_layer(obj_player.x, obj_player.y, "player", party_member_2)
 		}
 		
-		global.party_member_1 = party_member_1;
-		global.party_member_2 = party_member_2;
+		
+		
 		
 		global.party_member_1_follow_distance = 20;
 		global.party_member_2_follow_distance = 40;

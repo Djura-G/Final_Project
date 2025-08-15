@@ -55,7 +55,7 @@ if inparty = true and obj_player.follow_points > 0
 		}
 	}
 	
-	if global.party_member_1 = self
+	if global.party_member_1 = obj_guardian
 	{
 		switch obj_player.past_facing[global.party_member_1_follow_distance]
 		{
@@ -90,7 +90,7 @@ if inparty = true and obj_player.follow_points > 0
 			}
 		}
 	}
-	else 
+	if global.party_member_2 = obj_guardian
 	{
 		switch obj_player.past_facing[global.party_member_2_follow_distance]
 		{
