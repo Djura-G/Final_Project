@@ -120,8 +120,7 @@ if place_meeting(x, y, obj_save)
 }
 	
 //uptade pos to party follow
-if global.party_exists == true
-{
+
 	if (x != xprevious or y != yprevious) and (!instance_exists(obj_fade))
 	{
 		for (follow_pos = follow_points - 1; follow_pos > 0; follow_pos--)
@@ -137,13 +136,5 @@ if global.party_exists == true
 			
 		past_facing[0] = sprite_index;
 	}
-}
+
 	
-if instance_exists(obj_fade) and obj_fade.party_warp = true
-{
-	instance_create_layer(x, y, "player", global.party_member_1);
-	instance_create_layer(x, y, "player", global.party_member_2);
-	global.party_member_1.inparty = true;
-	global.party_member_2.inparty = true;
-	obj_fade.party_warp = false;
-}

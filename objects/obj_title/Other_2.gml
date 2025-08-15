@@ -10,8 +10,24 @@ global.new_game = false;
 global.party_exists = false;
 global.entered_new_room = false;
 
+//control defaults
+
+global.select_button = ord("Z");
+global.cancel_button = ord("X");
+global.sprint_button = ord("X");
+global.menu_button = ord("C");
+global.up_button = ord("W");
+global.left_button = ord("A");
+global.down_button = ord("S");
+global.right_button = ord("D");
+
+//update controls
+
+scr_update_controls();
 
 //party IDs
+global.pn2 = -2; //placeholder2
+global.pn1 = -1; //placeholder1
 global.p0 = 0; //archer
 global.p1 = 1; //guardian
 
@@ -60,6 +76,16 @@ if global.start_room = 2
 //party members verification
 if global.party_exists = true
 {
+	if global.party_member_1 = -2
+	{
+		global.party_member_1 = obj_party_placeholder_2;
+	}
+	
+	if global.party_member_1 = -1
+	{
+		global.party_member_1 = obj_party_placeholder_1;
+	}
+	
 	if global.party_member_1 = 0
 	{
 		global.party_member_1 = obj_archer;
@@ -68,6 +94,16 @@ if global.party_exists = true
 	if global.party_member_1 = 1
 	{
 		global.party_member_1 = obj_guardian;
+	}
+	
+	if global.party_member_2 = -2
+	{
+		global.party_member_2 = obj_party_placeholder_2;
+	}
+	
+	if global.party_member_2 = -1
+	{
+		global.party_member_2 = obj_party_placeholder_1;
 	}
 
 	if global.party_member_2 = 0

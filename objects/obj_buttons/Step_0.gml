@@ -1,7 +1,7 @@
 /// @description 
 ini_open("project.ini")
 
-if image_index == 0 and keyboard_check_pressed(ord("Z"))
+if image_index == 0 and global.select_button_pressed
 {
 	audio_play_sound(snd_confirm, 0, false);
 	room_goto(global.start_room);
@@ -10,8 +10,9 @@ if image_index == 0 and keyboard_check_pressed(ord("Z"))
 	global.new_game = false;
 }
 
-if image_index == 3 and keyboard_check_pressed(ord("Z"))
+if image_index == 3 and global.select_button_pressed
 {
 	game_end();
 }
+
 ini_close();

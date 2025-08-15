@@ -1,7 +1,7 @@
 /// @description 
 ini_open("project.ini")
 
-if image_index = 0 and keyboard_check_pressed(ord("Z"))
+if image_index = 0 and global.select_button_pressed
 {
 	audio_play_sound(snd_confirm, 0, false);
 	room_goto(global.start_room);
@@ -10,30 +10,25 @@ if image_index = 0 and keyboard_check_pressed(ord("Z"))
 	global.new_game = false;
 }
 
-if image_index = 5 and keyboard_check_pressed(ord("Z"))
+if image_index = 5 and global.select_button_pressed
 {
 	file_delete("project.ini");
 	game_restart();
 }
-if image_index = 5 and keyboard_check_pressed(ord("X"))
-{
-	audio_play_sound(snd_cancel, 0, false);
-	image_index = 1;
-}
 
-if image_index = 1 and keyboard_check_pressed(ord("Z"))
+if image_index = 1 and global.select_button_pressed
 {
 	audio_play_sound(snd_confirm, 0, false);
 	image_index = 5;
 }
 
-if image_index = 6 and keyboard_check_pressed(ord("Z")) or keyboard_check_pressed(ord("X"))
+if image_index = 6 and global.select_button_pressed
 {
 	audio_play_sound(snd_cancel, 0, false);
 	image_index = 1;
 }
 
-if image_index = 4 and keyboard_check_pressed(ord("Z"))
+if image_index = 4 and global.select_button_pressed
 {
 	game_end();
 }
