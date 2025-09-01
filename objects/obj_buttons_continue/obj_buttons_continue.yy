@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_buttons_continue",
-    "path":"sprites/spr_buttons_continue/spr_buttons_continue.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

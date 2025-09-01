@@ -17,6 +17,12 @@ else if inparty = true
 	sprite_index = spr_guardian_walk_up;
 }
 
+//step when move key is pressed
+if global.up_button_pressed_1 or global.down_button_pressed_1 or global.left_button_pressed_1 or global.right_button_pressed_1
+{
+	image_index = 1;
+}
+
 //party follow
 
 if inparty = true and obj_player.follow_points > 0

@@ -14,6 +14,8 @@ facing_direction = 2;
 
 party_follow = false;
 
+endpress = false;
+
 //load direction facing
 ini_open("project.ini")
 facing_direction = ini_read_real("save1", "facing", 2);

@@ -1,7 +1,7 @@
 /// @description Current state
 
 //MOVEMENT
-if keyboard_check(ord("X"))
+if global.sprint_button_pressed
 {
 	spd = run_spd;
 }else
@@ -9,8 +9,8 @@ if keyboard_check(ord("X"))
 	spd = walk_spd;
 }
 	
-hsp = (keyboard_check(vk_right) - keyboard_check(vk_left));
-vsp = (keyboard_check(vk_down) - keyboard_check(vk_up));
+hsp = (global.right_button_pressed - global.left_button_pressed);
+vsp = (global.down_button_pressed - global.up_button_pressed);
 	
 spd_dir = point_direction(x, y, x + hsp, y + vsp)
 	
@@ -67,6 +67,14 @@ else if vsp > 0
 else if vsp < 0
 {
 	sprite_index = spr_player_walk_up;
+}
+
+//step when move key is pressed
+
+if global.up_button_pressed_1 or global.down_button_pressed_1 or global.left_button_pressed_1 or global.right_button_pressed_1
+{
+	image_index = 1;
+	endpress = true;
 }
 
 if hsp != 0 or vsp != 0

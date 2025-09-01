@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pause",
-    "path":"sprites/spr_pause/spr_pause.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

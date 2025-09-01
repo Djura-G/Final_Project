@@ -13,7 +13,7 @@ else
 
 //sprint
 
-if keyboard_check_pressed(global.sprint_button) or keyboard_check_pressed(vk_shift)
+if keyboard_check(global.sprint_button) or keyboard_check(vk_shift)
 {
 	global.sprint_button_pressed = true;
 }
