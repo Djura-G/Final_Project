@@ -53,7 +53,7 @@ if file_exists("project.ini")
 }
 else
 {
-	instance_create_depth(6, 115, 100, obj_buttons);
+	instance_create_depth(6, 50, 100, obj_buttons);
 }
 
 //room verification

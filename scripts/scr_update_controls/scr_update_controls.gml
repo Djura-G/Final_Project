@@ -10,8 +10,8 @@ function scr_update_controls()
 		obj_title.sprint_key = ini_read_string("save", "sprint", "X");
 		obj_title.menu_key = ini_read_string("save", "menu", "C");
 		obj_title.up_key = ini_read_string("save", "up", "W");
-		obj_title.left_key = ini_read_string("save", "left", "A");
 		obj_title.down_key = ini_read_string("save", "down", "S");
+		obj_title.left_key = ini_read_string("save", "left", "A");
 		obj_title.right_key = ini_read_string("save", "right", "D");
 	}
 	

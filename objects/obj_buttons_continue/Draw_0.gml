@@ -14,7 +14,7 @@ if menu = 1
 		draw_set_color(c_white)
 	}
 	
-	draw_text(x, y, "New Game")
+	draw_text(x, y, "Continue Game")
 	
 	if selected = 1
 	{
@@ -26,7 +26,7 @@ if menu = 1
 		draw_set_color(c_white)
 	}
 	
-	draw_text(x, y + 25, "Settings")
+	draw_text(x, y + 25, "Reset")
 	
 	if selected = 2
 	{
@@ -38,7 +38,7 @@ if menu = 1
 		draw_set_color(c_white)
 	}
 	
-	draw_text(x, y + 50, "Credits")
+	draw_text(x, y + 50, "Settings")
 	
 	if selected = 3
 	{
@@ -50,7 +50,19 @@ if menu = 1
 		draw_set_color(c_white)
 	}
 	
-	draw_text(x, y + 75, "Close")
+	draw_text(x, y + 75, "Credits")
+	
+	if selected = 4
+	{
+		draw_set_color(c_yellow)
+	}
+	
+	else
+	{
+		draw_set_color(c_white)
+	}
+	
+	draw_text(x, y + 100, "Close")
 }
 
 if menu = 2
