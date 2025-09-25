@@ -7,7 +7,6 @@ if menu = 1
 	//start save
 	if selected = 0 and global.select_button_pressed
 	{
-		audio_play_sound(snd_confirm, 0, false);
 		room_goto(global.start_room);
 		var _instantiated = instance_create_layer(global.start_x, global.start_y, "Player", obj_player);
 		var _cam = instance_create_layer(global.start_x, global.start_y, "Instances", obj_cam);
@@ -316,13 +315,11 @@ if menu = 4
 
 if global.down_button_pressed_1
 {
-	audio_play_sound(snd_confirm, 1, false);
 	selected++;
 }
 
 if global.up_button_pressed_1
 {
-	audio_play_sound(snd_confirm, 1, false);
 	selected--;
 }
 

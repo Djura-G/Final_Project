@@ -10,6 +10,10 @@ global.new_game = false;
 global.party_exists = false;
 global.entered_new_room = false;
 
+//music volume control
+global.max_music_vol = 1;
+global.music_volume = 0.5;
+
 //control defaults
 
 global.select_button = ord("Z");
