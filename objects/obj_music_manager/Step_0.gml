@@ -18,13 +18,13 @@ if song_asset != target_song_asset
 		song_asset = -1;
 	}
 	
-	//play the song if the old one has faded out
-	if array_length(fade_out_inst) = 0
+	//play the song, if all the songs have faded out, or if it' supposed to overlap
+	if array_length(fade_out_inst) = 0 or overlap = true
 	{
 		if audio_exists(target_song_asset)
 		{
 			//play the song and store it's instance in a variable
-			song_inst = audio_play_sound(target_song_asset, 4, true);
+			song_inst = audio_play_sound(target_song_asset, 4, true, 1, 0, pitch);
 	
 			//start the song's volume at 0
 			audio_sound_gain(song_inst, 0, 0)
@@ -33,6 +33,10 @@ if song_asset != target_song_asset
 	
 		//set the song asset to match target song asset
 		song_asset = target_song_asset;
+		
+		//reset configuration (just for sure)
+		overlap = false;
+		pitch = 1;
 	}
 }
 

@@ -10,9 +10,6 @@ global.new_game = false;
 global.party_exists = false;
 global.entered_new_room = false;
 
-//music volume control
-global.max_music_vol = 1;
-global.music_volume = 0.5;
 
 //control defaults
 
@@ -44,7 +41,7 @@ global.rm2 = 2;//living room
 
 if file_exists("project.ini")
 {
-	instance_create_depth(6, 47, 100, obj_buttons_continue);
+	//instance_create_depth(6, 47, 100, obj_buttons_continue);
 	
 	ini_open("project.ini");
 	global.start_room = ini_read_string("save1", "room", 0);
@@ -57,7 +54,7 @@ if file_exists("project.ini")
 }
 else
 {
-	instance_create_depth(6, 50, 100, obj_buttons);
+	//instance_create_depth(6, 50, 100, obj_buttons);
 }
 
 //room verification
