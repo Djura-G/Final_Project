@@ -9,8 +9,8 @@
   "name":"obj_rm_warp",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects functions",
-    "path":"folders/Objects/objects functions.yy",
+    "name":"objects room warps",
+    "path":"folders/Objects/objects functions/objects room warps.yy",
   },
   "parentObjectId":null,
   "persistent":false,

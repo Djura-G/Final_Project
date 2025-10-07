@@ -6,8 +6,8 @@
   "name":"obj_party_placeholder_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects functions",
-    "path":"folders/Objects/objects functions.yy",
+    "name":"objects party",
+    "path":"folders/Objects/objects functions/objects party.yy",
   },
   "parentObjectId":null,
   "persistent":true,

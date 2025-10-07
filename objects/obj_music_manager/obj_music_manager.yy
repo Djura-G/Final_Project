@@ -10,8 +10,8 @@
   "name":"obj_music_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects functions",
-    "path":"folders/Objects/objects functions.yy",
+    "name":"objects music manager",
+    "path":"folders/Objects/objects functions/objects music manager.yy",
   },
   "parentObjectId":null,
   "persistent":true,
