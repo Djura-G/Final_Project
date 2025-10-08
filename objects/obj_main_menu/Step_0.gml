@@ -22,7 +22,8 @@ if global.select_button_pressed
 {
 	var _sml = menu_level;
 	
-	switch(menu_level){
+	switch(menu_level)
+	{
 		
 		//main menu
 		case 0 :
