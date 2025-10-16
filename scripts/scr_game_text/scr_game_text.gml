@@ -8,12 +8,12 @@ function scr_game_text(_text_id)
 			case "npc 1":
 				scr_text("hi i'm npc 1!");
 				scr_text("npc 1 is autistic!");
-				scr_text("do you like jojo's bizarre adventures? ");
+				scr_text("do you like jojo's bizarre adventures?");
 					scr_options("yeah", "npc 1 - yes");
 					scr_options("no", "npc 1 - no");
 			break;
 				case "npc 1 - yes":
-					scr_text("OH MAY GAH I LOVE IT TOO!!!!!>:3")
+					scr_text("OH MAY GAH I LOVE IT TOO!!!!!>:3T")
 				break;
 		
 				case "npc 1 - no":
