@@ -7,7 +7,7 @@ textbox_height = 53;
 border = 4;
 line_sep = 10;
 line_width = textbox_width - border * 2;
-txtb_spr = spr_textbox;
+
 txtb_img = 0;
 txtb_img_spd = 4 / 60;
 

@@ -2,6 +2,16 @@
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
 
+if global.down_button_pressed_1
+{
+	audio_play_sound(snd_speak, 0, false);
+}
+
+if global.up_button_pressed_1
+{
+	audio_play_sound(snd_speak, 0, false);
+}
+
 //move through the menu
 pos += global.down_button_pressed_1 - global.up_button_pressed_1;
 
@@ -20,6 +30,7 @@ if pos < 0
 
 if global.select_button_pressed
 {
+	audio_play_sound(snd_select, 0, false);
 	var _sml = menu_level;
 	
 	switch(menu_level)

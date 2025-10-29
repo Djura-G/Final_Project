@@ -23,6 +23,66 @@ if setup = false
 			//no char talking (center)
 			text_x_offset[p] = 40;
 			
+		//settings individual characters and fiding where the lines of text should break
+		for (var c = 0; c < text_length[p]; c++)
+		{
+			var _char_pos = c + 1;
+			
+			//store individual characters in the "char" array
+			char[c, p] = string_char_at(text[p], _char_pos);
+			
+			//get current width of the line
+			var _txt_up_to_char = string_copy(text[p], 1, _char_pos);
+			var _current_txt_w = string_width(_txt_up_to_char) - string_width(char[c, p]);
+			
+			//get the last free space
+			if char[c, p] = " "
+			{
+				last_free_space = _char_pos + 1;
+			}
+			
+			//get the line breaks
+			if _current_txt_w -	line_break_offset[p] > line_width
+			{
+				line_break_pos[line_break_num[p], p] = last_free_space;
+				line_break_num[p]++;
+				var _txt_up_to_last_space = string_copy(text[p], 1, last_free_space);
+				var _last_free_space_string = string_char_at(text[p], last_free_space);
+				line_break_offset[p] = string_width(_txt_up_to_last_space) - string_width(_last_free_space_string);
+			}
+			
+		}
+		
+		//getting each character cordinates
+		for (var c = 0; c < text_length[p]; c++)
+		{
+			var _char_pos = c + 1;
+			var _txt_x = textbox_x + text_x_offset[p] + border;
+			var _txt_y = textbox_y + border;
+			
+			//get current width of the line
+			var _txt_up_to_char = string_copy(text[p], 1, _char_pos);
+			var _current_txt_w = string_width(_txt_up_to_char) - string_width(char[c, p]);
+			var _txt_line = 0;
+			
+			//compensate for string breaks
+			for (var lb = 0; lb < line_break_num[p]; lb++)
+			{
+				//if the currrent looping character is after a line break
+				if _char_pos >= line_break_pos[lb, p]
+				{
+					var _str_copy = string_copy(text[p], line_break_pos[lb, p], _char_pos - line_break_pos[lb, p]);
+					_current_txt_w = string_width(_str_copy);
+					
+					//record the "line" this character should be on
+					_txt_line = lb + 1;// +1 since lb starts at 0
+				}
+			}
+			
+			//add to the  and y cordinates based on the new info
+			char_x[c, p] = _txt_x + _current_txt_w;
+			char_y[c, p] = _txt_y + _txt_line * line_sep;
+		}
 			
 	}
 }
@@ -69,17 +129,17 @@ if global.select_button_pressed
 
 //-----draw the textbox-----//
 #region draw textbox
-var _txbx =  textbox_x +  text_x_offset[page];
+var _txbx =  textbox_x + text_x_offset[page];
 var _txby = textbox_y;
 txtb_img += txtb_img_spd;
-txtb_spr_w = sprite_get_width(txtb_spr);
-txtb_spr_h = sprite_get_height(txtb_spr);
+txtb_spr_w = sprite_get_width(txtb_spr[page]);
+txtb_spr_h = sprite_get_height(txtb_spr[page]);
 
 op_txtb_spr_w = sprite_get_width(op_txtb_spr);
 op_txtb_spr_h = sprite_get_height(op_txtb_spr);
 
 //-----back of the textbox-----//
-draw_sprite_ext(txtb_spr, txtb_img, _txbx, _txby, textbox_width / txtb_spr_w, textbox_height / txtb_spr_h, 0, c_white, 1);
+draw_sprite_ext(txtb_spr[page], txtb_img, _txbx, _txby, textbox_width / txtb_spr_w, textbox_height / txtb_spr_h, 0, c_white, 1);
 
 #endregion
 
@@ -88,7 +148,7 @@ if draw_char = text_length[page] and page = page_number - 1
 {
 	//option selection
 	option_pos += global.down_button_pressed - global.up_button_pressed;
-	option_pos = clamp(option_pos, 0, option_number - 1)
+	option_pos = clamp(option_pos, 0, option_number - 1);
 	
 	//draw the options
 	var _op_space = 15;
@@ -111,5 +171,8 @@ if draw_char = text_length[page] and page = page_number - 1
 }
 
 //draw the text
-var _drawtext = string_copy(text[page], 1, draw_char);
-draw_text_ext(_txbx + border, _txby + 2, _drawtext, line_sep, line_width);
+for (var c = 0; c < draw_char; c++)
+{
+	//the text
+	draw_text(char_x[c, page], char_y[c, page], char[c, page]);
+}

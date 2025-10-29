@@ -17,7 +17,7 @@ function scr_game_text(_text_id)
 				break;
 		
 				case "npc 1 - no":
-					scr_text("Kill yourself nigger");
+					scr_text("Kill yourself ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger");
 				break;
 		
 		#endregion
