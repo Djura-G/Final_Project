@@ -1,7 +1,7 @@
 /// @description 
 
 textbox_x = camera_get_view_x(view_camera[0]);
-textbox_y = camera_get_view_y(view_camera[0])+ 170;
+textbox_y = camera_get_view_y(view_camera[0])+ 177;
 
 //-----setup-----//
 if setup = false
@@ -19,9 +19,22 @@ if setup = false
 		text_length[p] = string_length(text[p]);
 		
 		//get the x position for the textbox
-		
+			//char on the left
+			text_x_offset[p] = 73;
+			portrait_x_offset[p] = 7;
+			
+			//char on right
+			if speaker_side[p] = -1
+			{
+				text_x_offset[p] = 7;
+				portrait_x_offset[p] = 257;
+			}
+			
 			//no char talking (center)
-			text_x_offset[p] = 40;
+			if speaker_spr[p] = noone
+			{
+				text_x_offset[p] = 40;
+			}
 			
 		//settings individual characters and fiding where the lines of text should break
 		for (var c = 0; c < text_length[p]; c++)
@@ -88,10 +101,44 @@ if setup = false
 }
 
 //-----typing the text-----//
-if draw_char < text_length[page]
+if text_pause_timer <= 0
 {
-	draw_char += text_spd;
-	draw_char = clamp(draw_char, 0, text_length[page]);
+	if draw_char < text_length[page]
+	{
+		draw_char += text_spd;
+		draw_char = clamp(draw_char, 0, text_length[page]);
+	
+		var _check_char = string_char_at(text[page], draw_char);
+	
+		if _check_char = "." or _check_char = "!" or _check_char = "?"
+		{
+			text_pause_timer = text_pause_time;
+			if !audio_is_playing(snd[page])
+			{
+				audio_play_sound(snd[page], 8, false, 1, 0, random_range(0.9, 1.1));
+			}
+		}
+		
+		else
+		{
+			//typing sound
+			if snd_count < snd_delay
+			{
+				snd_count++;
+			}
+			
+			else
+			{
+				snd_count = 0;
+				audio_play_sound(snd[page], 8, false, 1, 0, random_range(0.9, 1.1));
+			}
+		}
+	}
+}
+
+else
+{
+	text_pause_timer--;
 }
 
 //-----flip through pages-----//
@@ -135,8 +182,29 @@ txtb_img += txtb_img_spd;
 txtb_spr_w = sprite_get_width(txtb_spr[page]);
 txtb_spr_h = sprite_get_height(txtb_spr[page]);
 
+//draw the speaker
+if speaker_spr[page] != noone
+{
+	sprite_index = speaker_spr[page];
+	if draw_char = text_length[page]
+	{
+		image_index = 0;
+	}
+	var _speaker_x = textbox_x + portrait_x_offset[page];
+	
+	if speaker_side[page] = -1
+	{
+		_speaker_x += sprite_width;
+	}
+	
+	//draw the speaker
+	draw_sprite_ext(txtb_spr[page], txtb_img, textbox_x + portrait_x_offset[page], textbox_y, sprite_width / txtb_spr_w, sprite_height / txtb_spr_h, 0, c_white, 1);
+	draw_sprite_ext(sprite_index, image_index, _speaker_x, textbox_y, speaker_side[page], 1, 0, c_white, 1);
+}
+
 op_txtb_spr_w = sprite_get_width(op_txtb_spr);
 op_txtb_spr_h = sprite_get_height(op_txtb_spr);
+arrow_img += arrow_img_spg;
 
 //-----back of the textbox-----//
 draw_sprite_ext(txtb_spr[page], txtb_img, _txbx, _txby, textbox_width / txtb_spr_w, textbox_height / txtb_spr_h, 0, c_white, 1);
@@ -162,7 +230,7 @@ if draw_char = text_length[page] and page = page_number - 1
 		//selection arrow
 		if option_pos = _op
 		{
-			draw_sprite(spr_selection_arrow, 0, _txbx, _txby - _op_space * option_number + _op_space * _op);
+			draw_sprite(spr_selection_arrow, arrow_img, _txbx, _txby - _op_space * option_number + _op_space * _op);
 		}
 		
 		//the option text

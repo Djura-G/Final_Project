@@ -10,14 +10,48 @@ function scr_set_defaults_for_text()
 	txtb_spr[page_number] = spr_textbox;
 	speaker_spr[page_number] = noone;
 	speaker_side[page_number] = 1;
+	
+	snd[page_number] = snd_speak;
 }
 
 /// @param text
+/// @param [character]
+/// @param [side]
 function scr_text(_text)
 {
 	scr_set_defaults_for_text();
 	
 	text[page_number] = _text;
+	
+	//get character info
+	if argument_count > 1
+	{
+		switch argument[1]
+		{
+			#region white npc
+				case "white_npc":
+					speaker_spr[page_number] = spr_white_npc_portrait;
+				break;
+			
+				case "white_npc_happy":
+					speaker_spr[page_number] = spr_white_npc_happy_portrait;
+				break;
+			#endregion
+			
+			#region blue npc
+				case "blue_npc":
+					speaker_spr[page_number] = spr_blue_npc_portrait;
+				break;
+			#endregion
+		}
+	}
+	
+	//get character side
+	if argument_count > 2
+	{
+		speaker_side[page_number] = argument[2];
+	}
+	
 	page_number++;
 }
 

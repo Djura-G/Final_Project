@@ -3,35 +3,29 @@ function scr_game_text(_text_id)
 {
 	switch(_text_id)
 	{
-		#region npc 1
+		#region white npc
 		
-			case "npc 1":
-				scr_text("hi i'm npc 1!");
-				scr_text("npc 1 is autistic!");
-				scr_text("do you like jojo's bizarre adventures?");
-					scr_options("yeah", "npc 1 - yes");
-					scr_options("no", "npc 1 - no");
+			case "white_npc":
+				scr_text("hi i'm white npc!", "white_npc");
+				scr_text("white npc is autistic!", "blue_npc", -1);
+				scr_text("do you like jojo's bizarre adventures?", "white_npc");
+					scr_options("yeah", "white_npc - yes");
+					scr_options("no", "white_npc - no");
 			break;
-				case "npc 1 - yes":
-					scr_text("OH MAY GAH I LOVE IT TOO!!!!!>:3T")
+				case "white_npc - yes":
+					scr_text("I love it too! It is the best anime ever. What's your favorite anime? Mine's jojo...", "white_npc_happy")
 				break;
 		
-				case "npc 1 - no":
-					scr_text("Kill yourself ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger ginger");
+				case "white_npc - no":
+					scr_text("Kill yourself", "white_npc");
 				break;
 		
 		#endregion
 		
-		case "npc 2":
-			scr_text("hi i'm npc 2!");
-			scr_text("npc 2 is autistic!");
-			scr_text("aiiiiiiiiiiii!");
-		break;
-		
-		case "npc 3":
-			scr_text("hi i'm npc 3!");
-			scr_text("npc 3 is autistic!");
-			scr_text("eaabababababababbabababj!");
+		case "blue_npc":
+			scr_text("hi i'm blue npc!");
+			scr_text("blue npc is autistic!");
+			scr_text("azulazulazulazulazulazulazulazulazulazulazulazulazul!");
 		break;
 	}
 }

@@ -8,7 +8,7 @@ op_space = 16;
 
 pos = 0;
 
-//start options
+//start game options
 option[0, 0] = "Start Game";
 option[0, 1] = "Settings";
 option[0, 2] = "Credits";

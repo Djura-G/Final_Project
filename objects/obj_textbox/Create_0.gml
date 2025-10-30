@@ -3,13 +3,16 @@ depth = -999999
 
 //textbox parameters
 textbox_width = 240;
-textbox_height = 53;
+textbox_height = 56;
 border = 4;
 line_sep = 10;
 line_width = textbox_width - border * 2;
 
 txtb_img = 0;
 txtb_img_spd = 4 / 60;
+
+arrow_img = 0;
+arrow_img_spg = 4 / 60;
 
 //the text
 page = 0;
@@ -33,6 +36,12 @@ op_txtb_spr = spr_option_box;
 
 setup = false;
 
+//sound
+snd_delay = 4;
+snd_count = snd_delay;
+
 //effects
 scr_set_defaults_for_text();
 last_free_space = 0;
+text_pause_timer = 0;
+text_pause_time = 16;

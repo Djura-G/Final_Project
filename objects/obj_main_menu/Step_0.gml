@@ -2,12 +2,7 @@
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
 
-if global.down_button_pressed_1
-{
-	audio_play_sound(snd_speak, 0, false);
-}
-
-if global.up_button_pressed_1
+if global.down_button_pressed_1 or global.up_button_pressed_1
 {
 	audio_play_sound(snd_speak, 0, false);
 }
