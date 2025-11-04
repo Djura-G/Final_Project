@@ -101,6 +101,7 @@ if setup = false
 }
 
 //-----typing the text-----//
+#region typing the text
 if text_pause_timer <= 0
 {
 	if draw_char < text_length[page]
@@ -110,7 +111,7 @@ if text_pause_timer <= 0
 	
 		var _check_char = string_char_at(text[page], draw_char);
 	
-		if _check_char = "." or _check_char = "!" or _check_char = "?"
+		if _check_char = "." or _check_char = "!" or _check_char = "?" or _check_char = ","
 		{
 			text_pause_timer = text_pause_time;
 			if !audio_is_playing(snd[page])
@@ -140,6 +141,7 @@ else
 {
 	text_pause_timer--;
 }
+#endregion
 
 //-----flip through pages-----//
 if global.select_button_pressed
@@ -241,6 +243,31 @@ if draw_char = text_length[page] and page = page_number - 1
 //draw the text
 for (var c = 0; c < draw_char; c++)
 {
+	//-----special stuff-----//
+	//foating text
+	var _float_y = 0;
+	if float_text[c, page] = true
+	{
+		float_dir[c, page] += -6;
+		_float_y = dsin(float_dir[c, page] * 1)
+	}
+	
+	//shake text
+	var _shake_x = 0;
+	var _shake_y = 0;
+	if shake_text[c, page] = true
+	{
+		shake_timer[c, page]--;
+		
+		if shake_timer[c, page] <= 0
+		{
+			shake_timer[c, page] = irandom_range(2, 4);
+			shake_dir[c, page] = irandom(360)
+		}
+		_shake_x = lengthdir_x(0.5, shake_dir[c, page]);
+		_shake_y = lengthdir_y(0.5, shake_dir[c, page]);
+	}
+	
 	//the text
-	draw_text(char_x[c, page], char_y[c, page], char[c, page]);
+	draw_text_color(char_x[c, page] + _shake_x, char_y[c, page] + _float_y + _shake_y, char[c, page], col_1[c, page], col_2[c, page], col_3[c, page], col_4[c, page], 1);
 }

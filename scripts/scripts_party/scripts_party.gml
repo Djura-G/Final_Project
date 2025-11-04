@@ -19,11 +19,8 @@ function scr_party(party_member_1, party_member_2, disband)
 			instance_create_layer(obj_player.x, obj_player.y, "player", party_member_2)
 		}
 		
-		
-		
-		
-		global.party_member_1_follow_distance = 40;
-		global.party_member_2_follow_distance = 80;
+		global.party_member_1_follow_distance = 25;
+		global.party_member_2_follow_distance = 50;
 		
 		global.party_member_1.inparty = true;
 		global.party_member_2.inparty = true;

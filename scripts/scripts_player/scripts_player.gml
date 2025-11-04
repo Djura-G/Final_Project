@@ -4,7 +4,7 @@
 function scr_walk()
 {
 	//MOVEMENT
-	if keyboard_check(ord("X"))
+	if global.sprint_button_pressed
 	{
 		spd = run_spd;
 	}else
@@ -12,8 +12,8 @@ function scr_walk()
 		spd = walk_spd;
 	}
 	
-	hsp = (keyboard_check(vk_right) - keyboard_check(vk_left));
-	vsp = (keyboard_check(vk_down) - keyboard_check(vk_up));
+	hsp = (global.right_button_pressed - global.left_button_pressed);
+	vsp = (global.down_button_pressed - global.up_button_pressed);
 	
 	spd_dir = point_direction(x, y, x + hsp, y + vsp)
 	
@@ -25,7 +25,7 @@ function scr_walk()
 	{
 		move_spd = 0;
 	}
-	
+
 	hsp = lengthdir_x(move_spd, spd_dir);
 	vsp = lengthdir_y(move_spd, spd_dir);
 	
@@ -36,7 +36,7 @@ function scr_walk()
 		{
 			x += sign(hsp);
 		}
-		
+	
 		hsp = 0
 	}
 	
@@ -46,15 +46,15 @@ function scr_walk()
 		{
 			y += sign(vsp);
 		}
-		
+	
 		vsp = 0
 	}
 	
 	x += hsp;
 	y += vsp;
-	
+
 	//ANIMATION
-	
+
 	if hsp > 0
 	{
 		sprite_index = spr_player_walk_right;
@@ -71,7 +71,15 @@ function scr_walk()
 	{
 		sprite_index = spr_player_walk_up;
 	}
-	
+
+	//step when move key is pressed
+
+	if global.up_button_pressed_1 or global.down_button_pressed_1 or global.left_button_pressed_1 or global.right_button_pressed_1
+	{
+		image_index = 1;
+		endpress = true;
+	}
+
 	if hsp != 0 or vsp != 0
 	{
 		image_speed = 1;
@@ -81,9 +89,9 @@ function scr_walk()
 		image_speed = 0;
 		image_index = 0;
 	}
-	
+
 	//direction facing
-	
+
 	if sprite_index = spr_player_walk_right
 	{
 		facing_direction = 0;
@@ -99,12 +107,6 @@ function scr_walk()
 	if sprite_index = spr_player_walk_up
 	{
 		facing_direction = 3;
-	}
-	
-	if keyboard_check_pressed(ord("C"))
-	{
-		audio_play_sound(snd_confirm, 0, false);
-		state = scr_pause;
 	}
 	
 	//save direction facing
@@ -129,36 +131,65 @@ function scr_walk()
 	}
 	
 	//uptade pos to party follow
-	if global.party_exists == true
+
+	if (x != xprevious or y != yprevious) and (!instance_exists(obj_fade))
 	{
-		if (x != xprevious or y != yprevious) and (!instance_exists(obj_fade))
+		for (follow_pos = follow_points - 1; follow_pos > 0; follow_pos--)
 		{
-			for (follow_pos = follow_points - 1; follow_pos > 0; follow_pos--)
-			{
-				player_x[follow_pos] = player_x[follow_pos - 1];
-				player_y[follow_pos] = player_y[follow_pos - 1];
+			player_x[follow_pos] = player_x[follow_pos - 1];
+			player_y[follow_pos] = player_y[follow_pos - 1];
 				
-				past_facing[follow_pos] = past_facing[follow_pos - 1];	
-			}
-			
-			player_x[0] = x;
-			player_y[0] = y;
-			
-			past_facing[0] = sprite_index;
+			past_facing[follow_pos] = past_facing[follow_pos - 1];	
 		}
+			
+		player_x[0] = x;
+		player_y[0] = y;
+			
+		past_facing[0] = sprite_index;
+	}
+		
+	if instance_exists(obj_textbox)
+	{
+		state = scr_interaction;
 	}
 	
-	if instance_exists(obj_fade) and obj_fade.party_warp = true
+	if global.select_button_pressed
 	{
-		instance_create_layer(x, y, "player", global.party_member_1);
-		instance_create_layer(x, y, "player", global.party_member_2);
-		global.party_member_1.inparty = true;
-		global.party_member_2.inparty = true;
-		obj_fade.party_warp = false;
+		var int_x = 0;
+		var int_y = 0;
+		var int_dist = 8;
+		
+		switch facing_direction
+		{
+			default:
+				int_x = x + int_dist;
+				int_y = y;
+			break;
+			
+			case 1:
+				int_x = x - int_dist;
+				int_y = y;
+			break;
+			
+			case 2:
+				int_x = x;
+				int_y = y + int_dist;
+			break;
+			
+			case 3:
+				int_x = x;
+				int_y = y - int_dist ;
+			break;
+		}
+		
+		instance_create_layer(int_x, int_y + 10, "Player", obj_interaction);
 	}
 }
 
-function scr_pause()
+function scr_interaction()
 {
-	instance_create_layer(258, 47, "Pause", obj_pause);
+	if !instance_exists(obj_textbox)
+	{
+		state = scr_walk;
+	}
 }

@@ -8,7 +8,9 @@ function scr_game_text(_text_id)
 			case "white_npc":
 				scr_text("hi i'm white npc!", "white_npc");
 				scr_text("white npc is autistic!", "blue_npc", -1);
+					scr_text_color(13, 20, c_yellow, c_yellow, c_white, c_white);
 				scr_text("do you like jojo's bizarre adventures?", "white_npc");
+					scr_text_shake(12, 36);
 					scr_options("yeah", "white_npc - yes");
 					scr_options("no", "white_npc - no");
 			break;
