@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_blue_npc_happy_portrait",
   "bboxMode":0,
   "bbox_bottom":49,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"83e9af6c-59d2-41ca-9b61-62950bb88d26","name":"83e9af6c-59d2-41ca-9b61-62950bb88d26","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"9153bcf2-64e5-4cb4-af87-f6d7689e571c","name":"9153bcf2-64e5-4cb4-af87-f6d7689e571c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"83e9af6c-59d2-41ca-9b61-62950bb88d26","name":"83e9af6c-59d2-41ca-9b61-62950bb88d26","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9153bcf2-64e5-4cb4-af87-f6d7689e571c","name":"9153bcf2-64e5-4cb4-af87-f6d7689e571c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":8,
   "gridY":8,
@@ -27,7 +27,7 @@
   "origin":0,
   "parent":{
     "name":"npcs",
-    "path":"folders/Sprites/sprites_characters/npcs.yy",
+    "path":"folders/Sprites/sprites characters/npcs.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

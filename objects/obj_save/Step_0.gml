@@ -1,5 +1,5 @@
 /// @description Insert description here
-
+/*
 if place_meeting(x, y, obj_player)
 {
 	ini_open("project.ini");

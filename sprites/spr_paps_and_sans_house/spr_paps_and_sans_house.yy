@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_paps_and_sans_house",
   "bboxMode":0,
   "bbox_bottom":239,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d48a6feb-fa0b-4d74-9f57-a78dd1f9691a","name":"d48a6feb-fa0b-4d74-9f57-a78dd1f9691a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d48a6feb-fa0b-4d74-9f57-a78dd1f9691a","name":"d48a6feb-fa0b-4d74-9f57-a78dd1f9691a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"rooms",
-    "path":"folders/Sprites/sprites_scenario/house/rooms.yy",
+    "path":"folders/Sprites/sprites scenario/house/rooms.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

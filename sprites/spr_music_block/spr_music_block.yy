@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_music_block",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"8ac5cd7b-7400-47e1-8578-684e515b4dd2","name":"8ac5cd7b-7400-47e1-8578-684e515b4dd2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8ac5cd7b-7400-47e1-8578-684e515b4dd2","name":"8ac5cd7b-7400-47e1-8578-684e515b4dd2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -44,8 +44,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"sprites_functions",
-    "path":"folders/Sprites/sprites_functions.yy",
+    "name":"sprites functions",
+    "path":"folders/Sprites/sprites functions.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

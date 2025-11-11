@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_save",
   "bboxMode":2,
   "bbox_bottom":17,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"26207dc2-34e3-4694-ad9b-c041a1fc484c","name":"26207dc2-34e3-4694-ad9b-c041a1fc484c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"26207dc2-34e3-4694-ad9b-c041a1fc484c","name":"26207dc2-34e3-4694-ad9b-c041a1fc484c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"sprites_functions",
-    "path":"folders/Sprites/sprites_functions.yy",
+    "name":"sprites functions",
+    "path":"folders/Sprites/sprites functions.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

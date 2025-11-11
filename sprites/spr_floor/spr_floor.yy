@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_floor",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"eaf9297b-825a-4bec-9e7d-c26618fc5eb4","name":"eaf9297b-825a-4bec-9e7d-c26618fc5eb4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"eaf9297b-825a-4bec-9e7d-c26618fc5eb4","name":"eaf9297b-825a-4bec-9e7d-c26618fc5eb4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"rooms",
-    "path":"folders/Sprites/sprites_scenario/house/rooms.yy",
+    "path":"folders/Sprites/sprites scenario/house/rooms.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

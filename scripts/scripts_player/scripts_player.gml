@@ -178,11 +178,16 @@ function scr_walk()
 			
 			case 3:
 				int_x = x;
-				int_y = y - int_dist ;
+				int_y = y - int_dist - 8;
 			break;
 		}
 		
-		instance_create_layer(int_x, int_y + 10, "Player", obj_interaction);
+		instance_create_layer(int_x, int_y - 10, "Player", obj_interaction);
+	}
+	
+	if keyboard_check_pressed(vk_tab)
+	{
+		game_end();
 	}
 }
 

@@ -1,6 +1,6 @@
 /// @description
 
-if position_meeting(mouse_x, mouse_y, id) and mouse_check_button_pressed(mb_left)
+if place_meeting(x, y, obj_interaction)
 {
-	scr_create_textbox(text_id)
+	scr_create_textbox(text_id);
 }

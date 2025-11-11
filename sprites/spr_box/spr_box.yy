@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_box",
   "bboxMode":2,
   "bbox_bottom":24,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a581dabf-8596-4607-bf0d-1d644bf66638","name":"a581dabf-8596-4607-bf0d-1d644bf66638","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a581dabf-8596-4607-bf0d-1d644bf66638","name":"a581dabf-8596-4607-bf0d-1d644bf66638","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"props",
-    "path":"folders/Sprites/sprites_scenario/house/props.yy",
+    "path":"folders/Sprites/sprites scenario/house/props.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

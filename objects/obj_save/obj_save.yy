@@ -9,8 +9,8 @@
   "name":"obj_save",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects functions",
-    "path":"folders/Objects/objects functions.yy",
+    "name":"objects save system",
+    "path":"folders/Objects/objects functions/objects save system.yy",
   },
   "parentObjectId":null,
   "persistent":false,

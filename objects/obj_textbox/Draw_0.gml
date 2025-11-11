@@ -92,7 +92,7 @@ if setup = false
 				}
 			}
 			
-			//add to the  and y cordinates based on the new info
+			//add to the x and y cordinates based on the new info
 			char_x[c, p] = _txt_x + _current_txt_w;
 			char_y[c, p] = _txt_y + _txt_line * line_sep;
 		}
