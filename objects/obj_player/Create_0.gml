@@ -2,6 +2,8 @@
 
 state = scr_walk;
 
+global.chocolate = 0;
+
 hsp = 0;
 vsp = 0;
 

@@ -1,7 +1,7 @@
 /// @description 
 
 //variables
-global.start_room = rm_bedroom;
+global.start_room = 1;
 global.start_x = 160;
 global.start_y = 140;
 
@@ -47,9 +47,9 @@ if file_exists("project.ini")
 	global.start_room = ini_read_string("save1", "room", 0);
 	global.start_x = ini_read_real("save1", "x", 160);
 	global.start_y = ini_read_real("save1", "y", 140);
+	global.party_exists = ini_read_string("save1", "party_exists", "false");
 	global.party_member_1 = ini_read_real("save1", "party1", global.p0);
 	global.party_member_2 = ini_read_real("save1", "party2", global.p1);
-	global.party_exists = ini_read_string("save1", "party_exists", "false");
 	ini_close();
 }
 else

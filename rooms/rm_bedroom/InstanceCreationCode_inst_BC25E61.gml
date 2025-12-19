@@ -1,1 +1,0 @@
-text_id = "white_npc";

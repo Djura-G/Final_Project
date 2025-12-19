@@ -1,7 +1,13 @@
 /// @description Insert description here
 /*
-if place_meeting(x, y, obj_player)
+if place_meeting(x, y, obj_interaction)
 {
+	image_speed = 8;
+	if image_index = 15
+	{
+		image_speed = 0
+	}
+	
 	ini_open("project.ini");
 	ini_write_string("save1", "room", room_to_save);
 	ini_write_real("save1", "x", obj_player.x);
@@ -50,5 +56,3 @@ if place_meeting(x, y, obj_player)
 	
 	ini_close();
 }
-
-image_angle += 1;
