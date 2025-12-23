@@ -6,31 +6,34 @@ function scr_game_text(_text_id)
 		//-----TESTING DIALOGUES-----//
 		#region white npc
 		
-			case "white_npc":
-				scr_text("hi i'm white npc!", "white_npc");
-				scr_text("white npc is autistic!", "blue_npc", -1);
-					scr_text_color(13, 20, c_yellow, c_yellow, c_white, c_white);
-				scr_text("do you like jojo's bizarre adventures?", "white_npc");
-					scr_text_shake(12, 36);
-					scr_options("yeah", "white_npc - yes");
-					scr_options("no", "white_npc - no");
+			case "skull_boy":
+				scr_text("Hi i'm skull boy!");
+				scr_text("I'm testing the dialog!");
+					scr_text_color(16, 21, c_yellow, c_yellow, c_white, c_white);
+				scr_text("Did you know that you can choose options?");
+					scr_options("yeah", "skull_boy - yes");
+					scr_options("no", "skull_boy - no");
 			break;
-				case "white_npc - yes":
-					scr_text("I love it too! It is the best anime ever. What's your favorite anime? Mine's jojo...", "white_npc_happy")
+				case "skull_boy - yes":
+					scr_text("Cool, right?")
 				break;
 		
-				case "white_npc - no":
-					scr_text("Kill yourself", "white_npc");
+				case "skull_boy - no":
+					scr_text("Now you know!");
 						scr_text_float(0, 12);
 				break;
 		
 		#endregion
 		
 		#region blue npc
-			case "blue_npc":
-				scr_text("hi i'm blue npc!");
-				scr_text("blue npc is autistic!");
-				scr_text("azul, azul, azul, azul, azul, azul, azul, azul, azul, azul, azul, azul, azul!", "blue_npc");
+			case "skull_girl":
+				scr_text("Hi i'm skull girl!");
+				scr_text("dialogs can have different colours!");
+					scr_text_color(17, 33, c_yellow, c_yellow, c_yellow, c_yellow);
+				scr_text("it can shake!");
+					scr_text_shake(7, 11);
+				scr_text("it can also have waves");
+					scr_text_float(17, 21);
 			break;
 		#endregion
 		
