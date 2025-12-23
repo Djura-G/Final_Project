@@ -4,7 +4,7 @@ function scr_game_text(_text_id)
 	switch(_text_id)
 	{
 		//-----TESTING DIALOGUES-----//
-		#region white npc
+		#region skull boy
 		
 			case "skull_boy":
 				scr_text("Hi i'm skull boy!");
@@ -25,7 +25,7 @@ function scr_game_text(_text_id)
 		
 		#endregion
 		
-		#region blue npc
+		#region skull girl
 			case "skull_girl":
 				scr_text("Hi i'm skull girl!");
 				scr_text("dialogs can have different colours!");
