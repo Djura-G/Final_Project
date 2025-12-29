@@ -1,6 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
-/*
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function scr_save()
+{
 	ini_open("project.ini");
 	ini_write_string("save1", "room", room_to_save);
 	ini_write_real("save1", "x", obj_player.x);
@@ -48,13 +49,6 @@
 	}
 	
 	ini_close();
-*/
-
-scr_save();
-
-if saved
-{
-	scr_create_textbox("save");
+	
+	saved = true
 }
-
-saved = false;

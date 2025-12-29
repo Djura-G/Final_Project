@@ -30,7 +30,6 @@ if global.select_button_pressed
 	
 	switch(menu_level)
 	{
-		
 		//main menu
 		case 0 :
 			switch(pos)
@@ -45,40 +44,12 @@ if global.select_button_pressed
 	
 				//settings
 				case 1:
-					menu_level = 1;
-				break;
-	
-				//credits
-				case 2:
-	
+					
 				break;
 	
 				//quit game
-				case 3:
-					game_end();
-				break;
-			}
-		break;
-		
-		//settings menu
-		case 1:
-			switch(pos)
-			{
-				//windows size
-				case 0:
-				break;
-				
-				//brightness
-				case 1:
-				break;
-				
-				//controls
 				case 2:
-				break;
-				
-				//back
-				case 3:
-					menu_level = 0;
+					game_end();
 				break;
 			}
 		break;

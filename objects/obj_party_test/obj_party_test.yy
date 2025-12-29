@@ -34,5 +34,5 @@
     "path":"sprites/spr_party_test/spr_party_test.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

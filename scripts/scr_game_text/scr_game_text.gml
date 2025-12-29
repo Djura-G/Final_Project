@@ -7,33 +7,31 @@ function scr_game_text(_text_id)
 		#region skull boy
 		
 			case "skull_boy":
-				scr_text("Hi i'm skull boy!");
-				scr_text("I'm testing the dialog!");
-					scr_text_color(16, 21, c_yellow, c_yellow, c_white, c_white);
-				scr_text("Did you know that you can choose options?");
-					scr_options("yeah", "skull_boy - yes");
-					scr_options("no", "skull_boy - no");
+				scr_text("Oi, eu sou um npc!");
+				scr_text("Estou testando o diálogo!");
+				scr_text("Você sabia que você pode selecionar opções?");
+					scr_options("Sim", "skull_boy - yes");
+					scr_options("Não", "skull_boy - no");
 			break;
 				case "skull_boy - yes":
-					scr_text("Cool, right?")
+					scr_text("Legal, né?")
 				break;
 		
 				case "skull_boy - no":
-					scr_text("Now you know!");
-						scr_text_float(0, 12);
+					scr_text("Agora você sabe!");
 				break;
 		
 		#endregion
 		
 		#region skull girl
 			case "skull_girl":
-				scr_text("Hi i'm skull girl!");
-				scr_text("dialogs can have different colours!");
-					scr_text_color(17, 33, c_yellow, c_yellow, c_yellow, c_yellow);
-				scr_text("it can shake!");
-					scr_text_shake(7, 11);
-				scr_text("it can also have waves");
-					scr_text_float(17, 21);
+				scr_text("Oi, eu sou uma npc!");
+				scr_text("Também testo o diálogo!");
+				scr_text("Diálogos podem ter cores diferentes, tremer, e ter ondas!");
+					scr_text_color(19, 23, c_yellow, c_yellow, c_yellow, c_yellow);
+					scr_text_shake(37, 42);
+					scr_text_float(51, 55);
+				scr_text("Legal né?");
 			break;
 		#endregion
 		
@@ -71,5 +69,22 @@ function scr_game_text(_text_id)
 			break;
 		
 		#endregion
+		
+		case "save":
+			scr_text("Jogo Salvo");
+		break;
+		
+		case "quit":
+			scr_text("Você tem certeza que quer fechar o jogo?");
+				scr_options("Voltar ao menu", "menu");
+				scr_options("Fechar jogo", "quit_game");
+		break;
+				case "menu":
+					game_restart();
+				break;
+				
+				case "quit_game":
+					game_end();
+				break;
 	}
 }

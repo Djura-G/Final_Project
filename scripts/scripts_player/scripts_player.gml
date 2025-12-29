@@ -185,9 +185,9 @@ function scr_walk()
 		instance_create_layer(int_x, int_y - 10, "Player", obj_interaction);
 	}
 	
-	if keyboard_check_pressed(vk_tab)
+	if keyboard_check_pressed(vk_escape)
 	{
-		game_end();
+		scr_create_textbox("quit");
 	}
 }
 
